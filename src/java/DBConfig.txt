@@ -1,0 +1,6 @@
+host=localhost
+database=technicalexam
+user=root
+password=
+useUnicode=true
+encoding=UTF-8

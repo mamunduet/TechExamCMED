@@ -1,0 +1,107 @@
+/*Search Bar Custom*/
+.search-bar-custom{
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+.search-bar-custom input{
+    border: none;
+    background-color: white;
+    color: #555;
+    height: 55px;
+    font-size: 16px;
+}
+.search-bar-custom button{
+    height: 55px;
+    width: 130px;
+}
+
+
+/*Profile Info Custom*/
+.profile-info-avatarLink{
+    margin: -29px 0 0 8px;
+    background-color: #1DA1F2;
+    display: inline-block !important;
+    border-radius: 50% !important;
+    position: absolute;
+}
+.profile-info-avatarImage{
+    height: 72px;
+    width: 72px;
+    border: 2px solid #fff;
+    border-radius: 50% !important;
+    color: #fff;
+    display: inline-block;
+}
+.profile-info-userFields{
+    position: relative;
+    top: 10px;
+    left: 88px;
+    width: 195px;
+}
+.profile-info-name{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    margin: -1px 0 -2px 0;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+.profile-info-userInfo{
+    display: inline-block !important;
+    max-width: 100%;
+    padding-top: 3px;
+}
+.profile-info-userIdLink{
+    font-size: 12px;
+    padding-right: 5px;
+    color: #66757f;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+.profile-info-userId{
+    font-size: 14px;
+    padding-right: 5px;
+    color: #657786;
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.profile-info-userButtons{
+    margin-top: 45px;
+    margin-left: 10px;
+}
+
+/*Others*/
+.sortable{
+    cursor: pointer;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 30px!important;
+}
+
+.both{
+    background-image:url(../img/sort_both.png);
+}
+
+.asc{
+    background-image:url(../img/sort_asc.png);
+}
+
+.desc{
+    background-image:url(../img/sort_desc.png);
+}
+
+.asc-disabled{
+    background-image:url(../img/sort_asc_disabled.png);
+}
+
+.desc-disabled{
+    background-image:url(../img/sort_desc_disabled.png);
+}
+
+.align-middle{
+    vertical-align: middle!important;
+}

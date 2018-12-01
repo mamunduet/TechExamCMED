@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="LoginForm" type="com.webapp.admin.login.LoginForm"/>
+        <form-bean name="PrescriptionForm" type="com.webapp.admin.prescription.PrescriptionForm"/>
+    </form-beans>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <!--login and logout Action -->
+        <action path="/Welcome" forward="/home/index.jsp"/>
+        <action path="/logout" forward="/login/loginTimeExpire.jsp?logout=1"/>
+        <action path="/index" forward="/login/index.jsp"/>
+
+        <action input="/login/index.jsp" path="/login" name="LoginForm" scope="request" type="com.webapp.admin.login.LoginAction">
+            <forward name="success" path="/prescriptionListInfo.do"></forward>
+            <forward name="failure" path="/login/index.jsp"></forward>
+        </action>
+
+        <action input="/admin/prescription/prescriptionList.jsp" validate="false" path="/prescriptionListInfo" name="PrescriptionForm" scope="request"  type="com.webapp.admin.prescription.PrescriptionListAction">
+            <forward name="success" path="/admin/prescription/prescriptionList.jsp"></forward>
+            <forward name="failure" path="/home/index.jsp"></forward>
+            <forward name="unauthorized" path="/welcome.do" />
+        </action>
+        <action input="/admin/prescription/prescriptionReport.jsp" validate="false" path="/prescriptionCountReport" name="PrescriptionForm" scope="request"  type="com.webapp.admin.prescription.PrescriptionReportAction">
+            <forward name="success" path="/admin/prescription/prescriptionReport.jsp"></forward>
+            <forward name="failure" path="/home/index.jsp"></forward>
+            <forward name="unauthorized" path="/welcome.do" />
+        </action>
+        <action input="/admin/prescription/prescriptionUI.jsp" path="/addPrescriptionInfo" name="PrescriptionForm" scope="request"  type="com.webapp.admin.prescription.PrescriptionAction">
+            <forward name="success" path="/prescriptionListInfo.do"></forward>
+            <forward name="failure" path="/admin/prescription/prescriptionUI.jsp"></forward>
+            <forward name="unauthorized" path="/welcome.do" />
+        </action>
+        <action input="/admin/prescription/prescriptionList.jsp" validate="false" path="/editPrescriptionInfo" name="PrescriptionForm" scope="request"  type="com.webapp.admin.prescription.PrescriptionAction">
+            <forward name="success" path="/admin/prescription/updatePrescription.jsp"></forward>
+            <forward name="failure" path="/admin/prescription/prescriptionList.jsp"></forward>
+            <forward name="unauthorized" path="/welcome.do" />
+        </action>
+        <action input="/admin/prescription/updatePrescription.jsp" path="/updatePrescriptionInfo" name="PrescriptionForm" scope="request" type="com.webapp.admin.prescription.PrescriptionAction">
+            <forward name="success" path="/prescriptionListInfo.do"></forward>
+            <forward name="failure" path="/admin/prescription/updatePrescription.jsp"></forward>
+        </action>
+        <action input="/admin/prescription/prescriptionList.jsp" validate="false" path="/deletePrescriptionInfo" name="PrescriptionForm" scope="request"  type="com.webapp.admin.prescription.PrescriptionAction">
+            <forward name="success" path="/prescriptionListInfo.do"></forward>
+            <forward name="failure" path="/admin/prescription/prescriptionList.jsp"></forward>
+            <forward name="unauthorized" path="/welcome.do" />
+        </action>
+
+    </action-mappings>
+
+    <message-resources parameter="com/webapp/admin/properties/ApplicationResource"/>
+
+</struts-config>
